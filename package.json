@@ -1,0 +1,20 @@
+{
+  "name": "instana-maintenance-window",
+  "version": "1.0.0",
+  "description": "Define a maintenance window within Instana",
+  "main": "index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steadybit/instana-maintenance-window.git"
+  },
+  "author": "Steadybit GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steadybit/instana-maintenance-window/issues"
+  },
+  "homepage": "https://github.com/steadybit/instana-maintenance-window#readme",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}

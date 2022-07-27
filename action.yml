@@ -1,0 +1,28 @@
+name: "Define Maintenance Window"
+description: "Define a maintenance window within Instana"
+inputs:
+  origin:
+    description: "The HTTP origin of your Instana installation, e.g., https://{{unit}}-{{tenant}}.instana.io"
+    required: true
+  apiToken:
+    description: "An API token with the `ConfigureCustomAlerts` permission."
+    required: true
+  query:
+    description: "Dynamic focus query describing for which infrastructure to disable alerting"
+    required: true
+  name:
+    description: "Name of the maintenance window"
+    required: true
+  duration:
+    description: "How long should the maintenance window be?"
+    required: false
+    default: "60000"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    ORIGIN: ${{ inputs.origin }}
+    API_TOKEN: ${{ inputs.apiToken }}
+    NAME: ${{ inputs.name }}
+    QUERY: ${{ inputs.query }}
+    DURATION: ${{ inputs.duration }}
